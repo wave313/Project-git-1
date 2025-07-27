@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import CourseList from "./components/CourseList";
-import CourseDetail from "./components/CourseDetail";
-import courses from "./data/courses";
+import CourseList from "./components/CourseList.jsx";
+import CourseDetail from "./components/CourseDetail.jsx";
+import courses from "./data/course.jsx";
 
 const App = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
