@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import CourseList from "./components/CourseList";
 import CourseDetail from "./components/CourseDetail";
 import courses from "./data/course";
 import LoginPage from "./pages/LoginPage";
-import AuthContext from "./context/AuthContext";
 
 const Home = () => {
-  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [selectedCourse, setSelectedCourse] = React.useState(null);
 
   return (
     <div className="max-w-3xl mx-auto p-6 font-sans">
@@ -21,24 +21,24 @@ const Home = () => {
   );
 };
 
-const App = () => {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("user");
-    if (stored) setUser(stored);
-  }, []);
+const AppRoutes = () => {
+  const { user } = useAuth();
 
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={user ? <Home /> : <Navigate to="/login" />}
-        />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
+      <Route path="/login" element={<LoginPage />} />
+    </Routes>
+  );
+};
+
+const App = () => {
+  return (
+    <AuthProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </AuthProvider>
   );
 };
 

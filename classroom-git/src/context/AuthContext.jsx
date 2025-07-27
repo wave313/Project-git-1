@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 
 const AuthContext = createContext();
 
@@ -7,16 +7,27 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    const stored = localStorage.getItem("user");
+    if (stored) {
+      setUser(JSON.parse(stored));
+    }
+  }, []);
+
   const login = (email, password) => {
-    // Mock: user/password ถูกต้องคือ admin@test.com / 1234
     if (email === "admin@test.com" && password === "1234") {
-      setUser({ email });
+      const userData = { email };
+      localStorage.setItem("user", JSON.stringify(userData));
+      setUser(userData);
       return true;
     }
     return false;
   };
 
-  const logout = () => setUser(null);
+  const logout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+  };
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
