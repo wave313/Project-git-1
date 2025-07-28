@@ -55,19 +55,20 @@ const courses = [
     videoUrl: "https://www.youtube.com/embed/NH9dC8uT0bQ",
     lessons: ["SDLC", "Use Case Diagram", "ER Diagram และ DFD"]
   },
+  
   {
     id: 9,
-    title: "แอปพลิเคชันบนมือถือ",
-    description: "เรียนรู้การพัฒนา Mobile App เบื้องต้นด้วย React Native หรือ Flutter",
-    videoUrl: "https://www.youtube.com/embed/Zjf0sfkOF3Q",
-    lessons: ["Layout พื้นฐาน", "Component และ State", "เชื่อม API เบื้องต้น"]
+    title: "การพัฒนาแอปพลิเคชันมือถือ",
+    description: "เรียนรู้การพัฒนาแอปบน Android และ iOS ด้วย React Native",
+    videoUrl: "https://www.youtube.com/embed/0-S5a0eXPoc",
+    lessons: ["React Native Basics", "Components and State", "Navigation"]
   },
   {
     id: 10,
-    title: "เทคโนโลยีคลาวด์และ DevOps",
-    description: "ศึกษาการใช้งาน Cloud Service และแนวคิด CI/CD สำหรับงาน IT สมัยใหม่",
-    videoUrl: "https://www.youtube.com/embed/YIVc4zGbh8o",
-    lessons: ["Cloud คืออะไร", "Docker และ Git", "พื้นฐาน DevOps และ Pipeline"]
+    title: "การวิเคราะห์ข้อมูลและ Machine Learning",
+    description: "ศึกษาแนวคิดพื้นฐานของการวิเคราะห์ข้อมูลและ Machine Learning ด้วย Python",
+    videoUrl: "https://www.youtube.com/embed/ukzFI9rgwfU",
+    lessons: ["Data Analysis with Pandas", "Machine Learning Basics", "Model Evaluation"]
   }
 ];
 
