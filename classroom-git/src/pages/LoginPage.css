@@ -1,0 +1,96 @@
+/* รีเซ็ตเบื้องต้น */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* กล่อง login */
+.login-container {
+  background-color: #ada6df;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* หัวเรื่อง */
+.login-container h2 {
+  margin-bottom: 24px;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* ช่อง input */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #c0c8d6;
+  color: white;
+  font-size: 16px;
+}
+
+.login-container input::placeholder {
+  color: white;
+}
+
+/* ปุ่ม */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-container button:hover {
+  background-color: #1d4ed8;
+}
+
+/* ข้อความผิดพลาด */
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.login-box {
+  background-color: #b2a6e2; /* สีพื้นหลังของกล่อง */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 50px auto 50px 100px; /* เพิ่ม margin-left เพื่อขยับไปทางขวา */
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1a57ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

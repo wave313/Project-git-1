@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import "./LoginPage.css"; // ✅ import CSS ที่แยกไว้
 
 const LoginPage = () => {
   const { login } = useAuth();
@@ -20,25 +21,25 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="max-w-sm mx-auto mt-20 p-6 border rounded shadow">
-      <h2 className="text-xl font-bold mb-4">เข้าสู่ระบบ</h2>
+    <div className="login-container">
+      <h2 className="login-heading">เข้าสู่ระบบ</h2>
       <form onSubmit={handleSubmit}>
         <input
-          className="w-full mb-3 p-2 border"
+          className="login-input"
           type="email"
           placeholder="อีเมล"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          className="w-full mb-3 p-2 border"
+          className="login-input"
           type="password"
           placeholder="รหัสผ่าน"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        {error && <p className="text-red-500 mb-2">{error}</p>}
-        <button type="submit" className="w-full bg-blue-500 text-white py-2">
+        {error && <p className="login-error">{error}</p>}
+        <button type="submit" className="login-button">
           เข้าสู่ระบบ
         </button>
       </form>
