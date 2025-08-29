@@ -1,4 +1,5 @@
 import { onAuthStateChanged } from "firebase/auth";
+import Navbar from "./Navbar";
 import { auth } from "./firebase";
 import { useEffect, useState } from "react";
 
@@ -15,4 +16,7 @@ function App() {
       {/* Routes */}
     </div>
   );
+
 }
+
+export default App;

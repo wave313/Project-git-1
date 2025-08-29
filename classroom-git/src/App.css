@@ -1,142 +1,122 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-/* สไตล์เฉพาะหน้า App.jsx */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* ฟอนต์หลัก */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700&display=swap');
-
-:root {
-  font-family: 'Noto Sans Thai', system-ui, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-  color-scheme: light dark;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  --color-bg: #f9fafb;   /* สีพื้นหลังโทนสว่าง */
-  --color-text: #111827; /* สีข้อความ */
-  --color-link: #2563eb; /* น้ำเงิน */
-  --color-link-hover: #1d4ed8;
-}
-
-/* Reset พื้นฐาน */
+/* รีเซ็ตค่า margin/padding ของทุก element */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
+/* ตั้งค่าฟอนต์และพื้นหลังให้กับ body */
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  min-height: 100vh;
-  font-size: 16px;
-  font-family: 'Noto Sans Thai', system-ui, sans-serif;
-  display: flex;
-  flex-direction: column;
+  font-family: 'Sarabun', sans-serif, Arial, sans-serif;
+  background-color: #f3f4f6; /* สีเทาอ่อน */
+  color: #111827; /* สีตัวอักษรเข้ม */
+  line-height: 1.6;
 }
 
-/* ลิงก์ */
+/* container กลางหน้า */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ลิงก์ทั่วไป */
 a {
-  font-weight: 500;
-  color: var(--color-link);
+  color: #2563eb; /* สีน้ำเงิน */
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
+
 a:hover {
-  color: var(--color-link-hover);
+  color: #1e40af; /* น้ำเงินเข้ม */
+  text-decoration: underline;
 }
 
-/* Heading */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  color: var(--color-text);
-}
-
-/* ปุ่ม */
+/* ปุ่มทั่วไป */
 button {
-  border-radius: 0.5rem;
-  padding: 0.6em 1.2em;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  background-color: #2563eb;
-  color: white;
   border: none;
-  transition: background 0.2s ease;
-}
-button:hover {
-  background-color: #1d4ed8;
-}
-button:disabled {
-  background-color: #9ca3af;
-  cursor: not-allowed;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
 }
 
-/* Card ใช้สำหรับกล่องรายวิชา */
-.card {
-  @apply bg-white rounded-xl shadow-md p-6 transition hover:shadow-xl hover:-translate-y-1;
+/* ปุ่มหลัก (Primary) */
+button.primary {
+  background-color: #3b82f6; /* น้ำเงิน */
+  color: white;
 }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #111827;
-    --color-text: #f9fafb;
-    --color-link: #60a5fa;
-    --color-link-hover: #93c5fd;
+button.primary:hover {
+  background-color: #2563eb;
+}
+
+/* ปุ่มรอง (Secondary) */
+button.secondary {
+  background-color: #6b7280; /* เทาเข้ม */
+  color: white;
+}
+
+button.secondary:hover {
+  background-color: #4b5563;
+}
+
+/* Navbar */
+nav {
+  background-color: #1f2937; /* เทาเข้ม */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 1rem;
+  font-weight: 600;
+}
+
+nav a:last-child {
+  margin-right: 0;
+}
+
+/* Header */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* รูปแบบฟอร์ม input */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Layout responsive ง่ายๆ */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
-
-  body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-  }
-
-  .card {
-    @apply bg-gray-800 text-gray-100;
+  nav a {
+    margin: 0.5rem 0;
   }
 }
